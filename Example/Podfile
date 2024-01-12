@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'MKGatewayMiniThree_Example' do
+  pod 'MKGatewayMiniThree', :path => '../'
+
+  target 'MKGatewayMiniThree_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
