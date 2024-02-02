@@ -1,0 +1,6 @@
+framework module MKGatewayMiniThree {
+  umbrella header "MKGatewayMiniThree-umbrella.h"
+
+  export *
+  module * { export * }
+}
