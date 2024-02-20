@@ -70,6 +70,8 @@
 #import "MKCLFilterByTLMModel.h"
 #import "MKCLFilterByTagController.h"
 #import "MKCLFilterByTagModel.h"
+#import "MKCLFilterByTofController.h"
+#import "MKCLFilterByTofModel.h"
 #import "MKCLFilterByUIDController.h"
 #import "MKCLFilterByUIDModel.h"
 #import "MKCLFilterByURLController.h"

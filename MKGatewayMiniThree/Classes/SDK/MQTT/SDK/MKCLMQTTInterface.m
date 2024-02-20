@@ -2503,6 +2503,62 @@
                                failedBlock:failedBlock];
 }
 
++ (void)cl_readFilterByTofWithMacAddress:(NSString *)macAddress
+                                   topic:(NSString *)topic
+                                sucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *checkMsg = [self checkMacAddress:macAddress topic:topic];
+    if (ValidStr(checkMsg)) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    NSDictionary *data = @{
+        @"msg_id":@(2062),
+        @"device_info":@{
+                @"mac":macAddress
+        },
+    };
+    [[MKCLMQTTDataManager shared] sendData:data
+                                     topic:topic
+                                macAddress:macAddress
+                                    taskID:mk_cl_server_taskReadFilterByTofOperation
+                                  sucBlock:sucBlock
+                               failedBlock:failedBlock];
+}
+
++ (void)cl_configFilterByTofList:(NSArray <NSString *>*)codeList
+                            isOn:(BOOL)isOn
+                      macAddress:(NSString *)macAddress
+                           topic:(NSString *)topic
+                        sucBlock:(void (^)(id returnData))sucBlock
+                     failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *checkMsg = [self checkMacAddress:macAddress topic:topic];
+    if (ValidStr(checkMsg)) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    if (codeList.count > 10 || !codeList || ![codeList isKindOfClass:NSArray.class]) {
+        [self operationFailedBlockWithMsg:@"Params Error" failedBlock:failedBlock];
+        return;
+    }
+    NSDictionary *data = @{
+        @"msg_id":@(1062),
+        @"device_info":@{
+                @"mac":macAddress
+        },
+        @"data":@{
+            @"switch_value":(isOn ? @(1) : @(0)),
+            @"mfg_code":codeList,
+        },
+    };
+    [[MKCLMQTTDataManager shared] sendData:data
+                                     topic:topic
+                                macAddress:macAddress
+                                    taskID:mk_cl_server_taskConfigFilterByTofOperation
+                                  sucBlock:sucBlock
+                               failedBlock:failedBlock];
+}
+
 + (void)cl_readFilterByPhyWithMacAddress:(NSString *)macAddress
                                    topic:(NSString *)topic
                                 sucBlock:(void (^)(id returnData))sucBlock

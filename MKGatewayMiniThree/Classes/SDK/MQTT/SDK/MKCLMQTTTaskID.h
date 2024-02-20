@@ -95,6 +95,9 @@ typedef NS_ENUM(NSInteger, mk_cl_serverOperationID) {
     mk_cl_server_taskReadAdvertiseBeaconParamsOperation,    //读取iBeacon广播参数
     mk_cl_server_taskConfigAdvertiseBeaconParamsOperation,  //配置iBeacon广播参数
     
+    mk_cl_server_taskReadFilterByTofOperation,              //读取MK-TOF过滤
+    mk_cl_server_taskConfigFilterByTofOperation,            //配置MK-TOF过滤
+    
     mk_cl_server_taskReadFilterByPhyOperation,              //读取Phy过滤
     mk_cl_server_taskConfigFilterByPhyOperation,            //配置Phy过滤
 };

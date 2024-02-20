@@ -231,6 +231,9 @@
     }else if (msgID == 1061) {
         //配置iBeacon广播参数
         operationID = mk_cl_server_taskConfigAdvertiseBeaconParamsOperation;
+    }else if (msgID == 1062) {
+        //配置MK-TOF过滤
+        operationID = mk_cl_server_taskConfigFilterByTofOperation;
     }else if (msgID == 1200) {
         //网关断开指定mac地址的蓝牙设备
         operationID = mk_cl_server_taskDisconnectNormalBleDeviceWithMacOperation;
@@ -345,6 +348,9 @@
     }else if (msgID == 2061) {
         //读取iBeacon广播参数
         operationID = mk_cl_server_taskReadAdvertiseBeaconParamsOperation;
+    }else if (msgID == 2062) {
+        //读取MK-TOF过滤
+        operationID = mk_cl_server_taskReadFilterByTofOperation;
     }else if (msgID == 2201) {
         //读取网关蓝牙连接的状态
         operationID = mk_cl_server_taskReadGatewayBleConnectStatusOperation;

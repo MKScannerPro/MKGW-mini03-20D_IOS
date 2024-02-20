@@ -170,14 +170,9 @@ static CGFloat const selectButtonHeight = 30.f;
 }
 
 - (NSArray *)valueList {
-    return @[@"United Arab Emirates",@"Argentina",@"American Samoa",@"Austria",@"Australia",@"Barbados",
-             @"Burkina Faso",@"Bermuda",@"Brazil",@"Bahamas",@"Canada",@"Central African Republic",@"Côte d'Ivoire",@"China",
-             @"Colombia",@"Costa Rica",@"Cuba",@"Christmas Island",@"Dominica",@"Dominican Republic",@"Ecuador",@"Europe",
-             @"Micronesia, Federated States of",@"France",@"Grenada",@"Ghana",@"Greece",@"Guatemala",@"Guam",@"Guyana",@"Honduras",
-             @"Haiti",@"Jamaica",@"Cayman Islands",@"Kazakhstan",@"Lebanon",@"Sri Lanka",@"Marshall Islands",@"Mongolia"
-             ,@"Macao, SAR China",@"Northern Mariana Islands",@"Mauritius",@"Mexico",@"Malaysia",@"Nicaragua",@"Panama",@"Peru",
-             @"Papua New Guinea",@"Philippines",@"Puerto Rico",@"Palau",@"Paraguay",@"Rwanda",@"Singapore",@"Senegal",@"El Salvador",@"Syrian Arab Republic (Syria)",@"Turks and Caicos Islands",@"Thailand",
-             @"Trinidad and Tobago",@"Taiwan, Republic of China",@"Tanzania, United Republic of",@"Uganda",@"United States of America",@"Uruguay",@"Venezuela (Bolivarian Republic)",@"Virgin Islands,US",@"Viet Nam",@"Vanuatu"];
+    return @[@"Argentina、Mexico",@"Australia、New Zealand",@"Bahrain、Egypt、Israel、India",@"Bolivia、Chile、China、El Salvador",@"Canada",@"Europe",
+             @"Indonesia",@"Japan",@"Jordan",@"Korea、US",@"Latin America-1",@"Latin America-2",@"Latin America-3",@"Lebanon",
+             @"Malaysia",@"Qatar",@"Russia",@"Singapore",@"Taiwan",@"Tunisia",@"Venezuela",@"Worldwide"];
 }
 
 @end

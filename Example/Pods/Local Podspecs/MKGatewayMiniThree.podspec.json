@@ -620,6 +620,9 @@
                     "MKGatewayMiniThree/Functions/FilterPages/FilterByTLMPage": [
 
                     ],
+                    "MKGatewayMiniThree/Functions/FilterPages/FilterByTofPage": [
+
+                    ],
                     "MKGatewayMiniThree/Functions/FilterPages/FilterByButtonPage": [
 
                     ],
@@ -673,6 +676,24 @@
                 {
                   "name": "Model",
                   "source_files": "MKGatewayMiniThree/Classes/Functions/FilterPages/FilterByTLMPage/Model/**"
+                }
+              ]
+            },
+            {
+              "name": "FilterByTofPage",
+              "subspecs": [
+                {
+                  "name": "Controller",
+                  "source_files": "MKGatewayMiniThree/Classes/Functions/FilterPages/FilterByTofPage/Controller/**",
+                  "dependencies": {
+                    "MKGatewayMiniThree/Functions/FilterPages/FilterByTofPage/Model": [
+
+                    ]
+                  }
+                },
+                {
+                  "name": "Model",
+                  "source_files": "MKGatewayMiniThree/Classes/Functions/FilterPages/FilterByTofPage/Model/**"
                 }
               ]
             },

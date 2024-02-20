@@ -57,7 +57,7 @@
         self.bxpButton = ([returnData[@"data"][@"bxp_button"] integerValue] == 1);
         self.bxpTag = ([returnData[@"data"][@"bxp_tag"] integerValue] == 1);
         self.pirPresence = ([returnData[@"data"][@"pir"] integerValue] == 1);
-        
+        self.tof = ([returnData[@"data"][@"mk_tof"] integerValue] == 1);
         self.other = ([returnData[@"data"][@"other"] integerValue] == 1);
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

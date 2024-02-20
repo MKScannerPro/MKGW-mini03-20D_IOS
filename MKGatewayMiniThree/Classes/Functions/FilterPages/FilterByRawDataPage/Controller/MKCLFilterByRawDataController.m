@@ -33,6 +33,7 @@
 #import "MKCLFilterByButtonController.h"
 #import "MKCLFilterByTagController.h"
 #import "MKCLFilterByPirController.h"
+#import "MKCLFilterByTofController.h"
 #import "MKCLFilterByOtherController.h"
 
 @interface MKCLFilterByRawDataController ()<UITableViewDelegate,
@@ -118,6 +119,12 @@ mk_textSwitchCellDelegate>
         return;
     }
     if (indexPath.section == 2 && indexPath.row == 3) {
+        //MK TOF
+        MKCLFilterByTofController *vc = [[MKCLFilterByTofController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+    if (indexPath.section == 2 && indexPath.row == 4) {
         //Other
         MKCLFilterByOtherController *vc = [[MKCLFilterByOtherController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
@@ -280,7 +287,10 @@ mk_textSwitchCellDelegate>
     cellModel10.rightMsg = (self.dataModel.pirPresence ? @"ON" : @"OFF");
     
     MKNormalTextCellModel *cellModel11 = self.section2List[3];
-    cellModel11.rightMsg = (self.dataModel.other ? @"ON" : @"OFF");
+    cellModel11.rightMsg = (self.dataModel.tof ? @"ON" : @"OFF");
+    
+    MKNormalTextCellModel *cellModel12 = self.section2List[4];
+    cellModel12.rightMsg = (self.dataModel.other ? @"ON" : @"OFF");
     
     [self.tableView reloadData];
 }
@@ -342,8 +352,13 @@ mk_textSwitchCellDelegate>
     
     MKNormalTextCellModel *cellModel4 = [[MKNormalTextCellModel alloc] init];
     cellModel4.showRightIcon = YES;
-    cellModel4.leftMsg = @"Other";
+    cellModel4.leftMsg = @"MK TOF";
     [self.section2List addObject:cellModel4];
+    
+    MKNormalTextCellModel *cellModel5 = [[MKNormalTextCellModel alloc] init];
+    cellModel5.showRightIcon = YES;
+    cellModel5.leftMsg = @"Other";
+    [self.section2List addObject:cellModel5];
 }
 
 #pragma mark - UI

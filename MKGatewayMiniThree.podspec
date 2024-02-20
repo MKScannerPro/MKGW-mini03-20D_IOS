@@ -412,6 +412,7 @@ TODO: Add long description of the pod here.
           sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByUIDPage'
           sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByURLPage'
           sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByTLMPage'
+          sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByTofPage'
           sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByButtonPage'
           sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByTag'
           sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByPirPage'
@@ -447,6 +448,19 @@ TODO: Add long description of the pod here.
       
         ssss.subspec 'Model' do |sssss|
           sssss.source_files = 'MKGatewayMiniThree/Classes/Functions/FilterPages/FilterByTLMPage/Model/**'
+        end
+      end
+      
+      sss.subspec 'FilterByTofPage' do |ssss|
+        ssss.subspec 'Controller' do |sssss|
+          sssss.source_files = 'MKGatewayMiniThree/Classes/Functions/FilterPages/FilterByTofPage/Controller/**'
+        
+          sssss.dependency 'MKGatewayMiniThree/Functions/FilterPages/FilterByTofPage/Model'
+          
+        end
+      
+        ssss.subspec 'Model' do |sssss|
+          sssss.source_files = 'MKGatewayMiniThree/Classes/Functions/FilterPages/FilterByTofPage/Model/**'
         end
       end
       

@@ -21,17 +21,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *wifiPassword;
 
 /*
- 0：Argentina、Mexico
- 1：Australia、New Zealand
- 2：Bahrain、Egypt、Israel、India
- 3：Bolivia、Chile、China、El Salvador
- 4：Canada
- 5：Europe
- 6：Indonesia
- 7：Japan
- 8：Jordan
- 9：Korea、US
- 10：Latin America-1
+ 0:Argentina、Mexico
+ 1:Australia、New Zealand
+ 2:Bahrain、Egypt、Israel、India
+ 3:Bolivia、Chile、China、El Salvador
+ 4:Canada
+ 5:Europe
+ 6:Indonesia
+ 7:Japan
+ 8:Jordan
+ 9:Korea、US
+ 10:Latin America-1
  11:Latin America-2
  12:Latin America-3
  13:Lebanon
