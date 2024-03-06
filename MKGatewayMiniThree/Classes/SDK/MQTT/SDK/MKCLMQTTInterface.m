@@ -333,7 +333,7 @@
         return;
     }
     NSDictionary *data = @{
-        @"msg_id":@(1017),
+        @"msg_id":@(1015),
         @"device_info":@{
                 @"mac":macAddress
         },

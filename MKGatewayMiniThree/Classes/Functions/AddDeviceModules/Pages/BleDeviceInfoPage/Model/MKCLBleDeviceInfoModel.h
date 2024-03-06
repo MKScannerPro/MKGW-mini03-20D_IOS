@@ -18,13 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *manu;
 
-@property (nonatomic, copy)NSString *firmware;
+@property (nonatomic, copy)NSString *wifiFirmware;
 
 @property (nonatomic, copy)NSString *software;
 
 @property (nonatomic, copy)NSString *hardware;
 
 @property (nonatomic, copy)NSString *wifiStaMac;
+
+@property (nonatomic, copy)NSString *btFirmware;
 
 @property (nonatomic, copy)NSString *btMac;
 

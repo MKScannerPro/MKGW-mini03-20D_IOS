@@ -52,6 +52,10 @@
             [self operationFailedBlockWithMsg:@"Read mac address error" block:failedBlock];
             return ;
         }
+        if (![self readSlaveFirmware]) {
+            [self operationFailedBlockWithMsg:@"Read BT Firmware error" block:failedBlock];
+            return ;
+        }
         if (![self readWifiStaMAC]) {
             [self operationFailedBlockWithMsg:@"Read WIFI STA MAC error" block:failedBlock];
             return ;
@@ -106,7 +110,7 @@
     __block BOOL success = NO;
     [MKCLInterface cl_readFirmwareWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.firmware = returnData[@"result"][@"firmware"];
+        self.wifiFirmware = returnData[@"result"][@"firmware"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
@@ -146,6 +150,19 @@
     [MKCLInterface cl_readMacAddressWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
         self.btMac = returnData[@"result"][@"macAddress"];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readSlaveFirmware {
+    __block BOOL success = NO;
+    [MKCLInterface cl_readSlaveFirmwareWithSucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.btFirmware = returnData[@"result"][@"firmware"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

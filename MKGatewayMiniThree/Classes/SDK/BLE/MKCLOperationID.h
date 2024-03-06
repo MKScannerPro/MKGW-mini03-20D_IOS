@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, mk_cl_taskOperationID) {
     mk_cl_taskReadDeviceWifiSTAMacAddressOperation, //读取WIFI STA MAC地址
     mk_cl_taskReadNTPServerHostOperation,       //读取NTP服务器域名
     mk_cl_taskReadTimeZoneOperation,            //读取时区
+    mk_cl_taskReadSlaveFirmwareOperation,       //读取从机固件版本
     
 #pragma mark - Wifi Params
     mk_cl_taskReadWIFISSIDOperation,            //读取设备当前的wifi ssid

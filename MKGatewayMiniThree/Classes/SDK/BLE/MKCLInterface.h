@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)cl_readDeviceNameWithSucBlock:(void (^)(id returnData))sucBlock
                           failedBlock:(void (^)(NSError *error))failedBlock;
 
-/// Read the wifi sta mac address of the device.
+/// Read the slave mac address of the device.
 /*
     @{
     @"macAddress":@"AA:BB:CC:DD:EE:FF"
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)cl_readMacAddressWithSucBlock:(void (^)(id returnData))sucBlock
                           failedBlock:(void (^)(NSError *error))failedBlock;
 
-/// Read the mac address of the Wifi STA.
+/// Read the master mac address of the device.
 /*
     @{
     @"macAddress":@"AA:BB:CC:DD:EE:FF"
@@ -102,6 +102,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param failedBlock Failure callback
 + (void)cl_readTimeZoneWithSucBlock:(void (^)(id returnData))sucBlock
                         failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the current time zone to the device.
+/*
+ @{
+ @"firmware":@"V1.0.1"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)cl_readSlaveFirmwareWithSucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark *********************MQTT Params************************
 

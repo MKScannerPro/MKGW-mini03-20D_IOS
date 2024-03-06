@@ -103,7 +103,7 @@ static dispatch_once_t onceToken;
                                                           userInfo:data];
         return;
     }
-    if (msgID == 3018) {
+    if (msgID == 3016) {
         //NCP固件升级结果
         [[NSNotificationCenter defaultCenter] postNotificationName:MKCLReceiveDeviceNpcOTAResultNotification
                                                             object:nil

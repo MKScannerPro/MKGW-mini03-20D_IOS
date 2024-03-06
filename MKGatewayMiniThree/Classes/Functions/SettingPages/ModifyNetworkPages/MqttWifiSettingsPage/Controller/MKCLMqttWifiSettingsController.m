@@ -206,8 +206,8 @@ MKCLMqttWifiSettingsBandCellDelegate>
     }
 }
 
-#pragma mark - MKCLBleWifiSettingsBandCellDelegate
-- (void)cl_bleWifiSettingsBandCell_countryChanged:(NSInteger)country {
+#pragma mark - MKCLMqttWifiSettingsBandCellDelegate
+- (void)cl_mqttWifiSettingsBandCell_countryChanged:(NSInteger)country {
     self.dataModel.country = country;
     MKCLMqttWifiSettingsBandCellModel *cellModel = self.section1List[0];
     cellModel.country = country;

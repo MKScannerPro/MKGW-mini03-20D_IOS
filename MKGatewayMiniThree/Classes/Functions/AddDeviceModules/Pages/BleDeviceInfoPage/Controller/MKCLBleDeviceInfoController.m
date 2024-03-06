@@ -95,8 +95,8 @@
     [self.dataList addObject:cellModel3];
     
     MKNormalTextCellModel *cellModel4 = [[MKNormalTextCellModel alloc] init];
-    cellModel4.leftMsg = @"Firmware version";
-    cellModel4.rightMsg = self.dataModel.firmware;
+    cellModel4.leftMsg = @"Hardware version";
+    cellModel4.rightMsg = self.dataModel.hardware;
     [self.dataList addObject:cellModel4];
     
     MKNormalTextCellModel *cellModel5 = [[MKNormalTextCellModel alloc] init];
@@ -105,19 +105,24 @@
     [self.dataList addObject:cellModel5];
     
     MKNormalTextCellModel *cellModel6 = [[MKNormalTextCellModel alloc] init];
-    cellModel6.leftMsg = @"Hardware version";
-    cellModel6.rightMsg = self.dataModel.hardware;
+    cellModel6.leftMsg = @"WIFI Firmware version";
+    cellModel6.rightMsg = self.dataModel.wifiFirmware;
     [self.dataList addObject:cellModel6];
-    
+        
     MKNormalTextCellModel *cellModel7 = [[MKNormalTextCellModel alloc] init];
     cellModel7.leftMsg = @"WIFI STA MAC";
     cellModel7.rightMsg = self.dataModel.wifiStaMac;
     [self.dataList addObject:cellModel7];
     
     MKNormalTextCellModel *cellModel8 = [[MKNormalTextCellModel alloc] init];
-    cellModel8.leftMsg = @"BT MAC";
-    cellModel8.rightMsg = self.dataModel.btMac;
+    cellModel8.leftMsg = @"BT Firmware Version";
+    cellModel8.rightMsg = self.dataModel.btFirmware;
     [self.dataList addObject:cellModel8];
+    
+    MKNormalTextCellModel *cellModel9 = [[MKNormalTextCellModel alloc] init];
+    cellModel9.leftMsg = @"BT MAC";
+    cellModel9.rightMsg = self.dataModel.btMac;
+    [self.dataList addObject:cellModel9];
     
     [self.tableView reloadData];
 }

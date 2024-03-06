@@ -118,6 +118,16 @@
                          failureBlock:failedBlock];
 }
 
++ (void)cl_readSlaveFirmwareWithSucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed001700";
+    [centralManager addTaskWithTaskID:mk_cl_taskReadSlaveFirmwareOperation
+                       characteristic:peripheral.cl_custom
+                          commandData:commandString
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
 #pragma mark *********************MQTT Params************************
 
 + (void)cl_readServerHostWithSucBlock:(void (^)(id returnData))sucBlock

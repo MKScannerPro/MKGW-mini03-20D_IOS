@@ -152,6 +152,17 @@ NSString *const mk_cl_contentKey = @"mk_cl_contentKey";
             @"timeZone":[MKBLEBaseSDKAdopter signedHexTurnString:content],
         };
         operationID = mk_cl_taskReadTimeZoneOperation;
+    }else if ([cmd isEqualToString:@"17"]) {
+        //读取从机固件版本
+        NSString *firmware = @"";
+        if (data.length > 4) {
+            NSData *firmwareData = [data subdataWithRange:NSMakeRange(4, data.length - 4)];
+            firmware = [[NSString alloc] initWithData:firmwareData encoding:NSUTF8StringEncoding];
+        }
+        resultDic = @{
+            @"firmware":(MKValidStr(firmware) ? firmware : @""),
+        };
+        operationID = mk_cl_taskReadSlaveFirmwareOperation;
     }else if ([cmd isEqualToString:@"20"]) {
         //读取MQTT服务器域名
         NSString *host = @"";
