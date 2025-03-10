@@ -148,6 +148,12 @@ TODO: Add long description of the pod here.
     
   end
   
+  s.subspec 'LoginManager' do |ss|
+    ss.source_files = 'MKGatewayMiniThree/Classes/LoginManager/**'
+  
+    ss.dependency 'MKIotCloudManager'
+  end
+  
   s.subspec 'Functions' do |ss|
     
     ss.subspec 'AddDeviceModules' do |sss|
@@ -289,6 +295,8 @@ TODO: Add long description of the pod here.
           ssss.dependency 'MKGatewayMiniThree/Functions/ServerForApp'
           ssss.dependency 'MKGatewayMiniThree/Functions/ScanPage'
           ssss.dependency 'MKGatewayMiniThree/Functions/DeviceDataPage'
+          ssss.dependency 'MKGatewayMiniThree/Functions/SyncDevicePage'
+          
         end
         
         sss.subspec 'Model' do |ssss|
@@ -813,11 +821,24 @@ TODO: Add long description of the pod here.
         
     end
     
+    ss.subspec 'SyncDevicePage' do |sss|
+        sss.subspec 'Controller' do |ssss|
+          ssss.source_files = 'MKGatewayMiniThree/Classes/Functions/SyncDevicePage/Controller/**'
+          
+          ssss.dependency 'MKGatewayMiniThree/Functions/SyncDevicePage/View'
+        end
+        
+        sss.subspec 'View' do |ssss|
+          ssss.source_files = 'MKGatewayMiniThree/Classes/Functions/SyncDevicePage/View/**'
+        end
+    end
+    
     ss.dependency 'MKGatewayMiniThree/SDK'
     ss.dependency 'MKGatewayMiniThree/Expand'
     ss.dependency 'MKGatewayMiniThree/CTMediator'
     ss.dependency 'MKGatewayMiniThree/DeviceModel'
     ss.dependency 'MKGatewayMiniThree/CTMediator'
+    ss.dependency 'MKGatewayMiniThree/LoginManager'
   
     ss.dependency 'MKBaseModuleLibrary'
     ss.dependency 'MKCustomUIModule'
