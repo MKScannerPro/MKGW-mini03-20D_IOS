@@ -137,6 +137,7 @@
 #import "MKCLSettingController.h"
 #import "MKCLSyncDeviceController.h"
 #import "MKCLSyncDeviceCell.h"
+#import "MKCLNetworkService.h"
 #import "MKCLUserLoginManager.h"
 #import "CBPeripheral+MKCLAdd.h"
 #import "MKCLBLESDK.h"
